@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/hero.jpg" as="image">
+  <link rel="preload" href="/critical.css" as="style">
+  
+  <!-- Preconnect to external domains (warm up the connection) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://api.example.com">
+  
+  <!-- DNS prefetch (lighter than preconnect) -->
+  <link rel="dns-prefetch" href="https://analytics.example.com">
+  
+  <!-- Prefetch next page (user will likely navigate here) -->
+  <link rel="prefetch" href="/next-page.html">
+  
+  <!-- Script loading strategies -->
+  <script src="app.js" defer></script> <!-- Download async, execute after HTML parsed -->
+  <script src="analytics.js" async></script> <!-- Download and execute async, order not guaranteed -->
+  <script type="module" src="app.js"></script> <!-- Automatically deferred, ES modules -->
+  
+  <!-- Inline critical CSS (fastest possible render) -->
+  <style>
+    /* Only above-the-fold styles here */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+  
+    header {
+      background: #fff;
+      height: 60px;
+    }
+  </style>
+  <!-- Then load the rest asynchronously -->
+  <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+</body>
+</html>

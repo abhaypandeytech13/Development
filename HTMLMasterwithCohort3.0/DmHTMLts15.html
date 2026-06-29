@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Video with multiple formats + subtitles -->
+  <video width="1280" height="720" controls muted autoplay loop poster="/thumbnail.jpg" preload="metadata">
+    <source src="video.webm" type="video/webm">
+    <source src="video.mp4" type="video/mp4">
+  
+    <!-- Subtitles / closed captions -->
+    <track kind="subtitles" src="subtitles-en.vtt" srclang="en" label="English" default>
+    <track kind="subtitles" src="subtitles-hi.vtt" srclang="hi" label="Hindi">
+  
+    <!-- Fallback for browsers that don't support video -->
+    <p>Your browser doesn't support video. <a href="video.mp4">Download it</a>.</p>
+  </video>
+  
+  <!-- Audio -->
+  <audio controls preload="metadata">
+    <source src="podcast.ogg" type="audio/ogg">
+    <source src="podcast.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>

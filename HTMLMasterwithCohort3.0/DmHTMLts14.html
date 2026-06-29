@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- id — unique identifier, used by CSS, JS, anchor links -->
+  <section id="contact-section">
+  
+    <!-- class — for CSS and JS selection, multiple allowed -->
+    <div class="card featured large">
+  
+      <!-- style — inline CSS (use sparingly) -->
+      <p style="color: red; font-weight: bold;">
+  
+        <!-- data-* — custom data attributes for JS -->
+        <button data-product-id="42" data-category="electronics">Add to Cart</button>
+        <!-- Access in JS: button.dataset.productId → "42" -->
+  
+        <!-- tabindex — keyboard navigation order -->
+      <div tabindex="0">Focusable div</div> <!-- 0 = natural order -->
+      <div tabindex="-1">Programmatically focusable only</div>
+      <!-- Avoid positive tabindex values — breaks natural flow -->
+  
+      <!-- contenteditable — makes any element editable -->
+      <div contenteditable="true">Users can edit this text</div>
+  
+      <!-- hidden — hides element (like display:none, but semantic) -->
+      <div hidden>This content is hidden</div>
+  
+      <!-- draggable — enables HTML drag and drop -->
+      <div draggable="true">Drag me</div>
+  
+      <!-- spellcheck -->
+      <textarea spellcheck="true"></textarea>
+  
+      <!-- translate — whether to translate this text -->
+      <code translate="no">console.log("Hello")</code>
+  
+      <!-- lang — override document language for specific elements -->
+      <p lang="fr">Bonjour le monde</p>
+  
+      <!-- dir — text direction -->
+      <p dir="rtl">مرحبا بالعالم</p>
+</body>
+</html>
